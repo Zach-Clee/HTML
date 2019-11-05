@@ -1,0 +1,75 @@
+<html>
+<span id="Cities" style=" border-style: dashed; position: absolute; top: 10; left: 100" onclick="visibilitiyOfSubMenu('submenu1')">
+	Cities
+	<span id="submenu1" style="position: absolute; top: 20; left: -100; visibility: hidden" >
+		<span id="M1" style="position: absolute; top: 50; left: 100;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)"> 
+			London
+		</span>
+		<span id="M2" style="position: absolute; top: 80; left: 100;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)">
+			Bristol
+		</span>
+		<span id="M3" style="position: absolute; top: 110; left: 100;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)">
+			Manchster
+		</span>
+	</span>
+</span>
+
+<span id="Sports" style="border-style: groove; position: absolute; top: 10; left: 240" onclick="visibilitiyOfSubMenu('submenu2')">
+Sports
+	<span id="submenu2" style="position: absolute; top: 20; left: -140; visibility: hidden">
+		<span id="M1" style="position: absolute; top: 50; left: 140;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)"> 
+			Football
+		</span>
+		<span id="M2" style="position: absolute; top: 80; left: 140;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)">
+			Hocky
+		</span>
+		<span id="M3" style="position: absolute; top: 110; left: 140;" onmouseover="menuItemIn(this)" onmouseleave="menuItemOut(this)">
+			Baseball
+		</span>
+	</span>
+</span>
+
+
+
+
+<script>
+	
+	function menuItemIn(ref){
+		ref.style.backgroundColor="blue";
+	}
+	
+	function menuItemOut(ref){
+		ref.style.backgroundColor="white";
+	}
+
+	function showSubMenu(ref){
+		if (ref.id == "Cities"){
+		ref = window.document.getElementById("submenu1")
+		ref.style.visibility = "visible";
+	} else if (ref.id == "Sports"){
+		ref = window.document.getElementById("submenu2")
+		ref.style.visibility = "visible";
+		}
+	}
+
+	function hideSubMenu(ref){
+		if (ref.id == "Cities"){
+		ref = window.document.getElementById("submenu1")
+		ref.style.visibility = "hidden";
+	} else if (ref.id == "Sports"){
+		ref = window.document.getElementById("submenu2")
+		ref.style.visibility = "hidden";
+		}
+	}
+
+	function visibilitiyOfSubMenu(ref){
+		ref = window.document.getElementById(ref);
+			if (ref.style.visibility == "hidden"){
+				ref.style.visibility = "visible";
+			}else if (ref.style.visibility == "visible"){
+				ref.style.visibility = "hidden";
+			}
+	}
+
+</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body onload="getStudent()">
+
+<h2>HTML Table</h2>
+
+<table id="Results">
+  <tr style="background-color: grey">
+    <th>Dive Number</th>
+    <th>Loction</th>
+    <th>Dive Date</th>
+    <th>Weight</th>
+  </tr>
+
+</table>
+</body>
+
+
+<script>
+function getStudent1(){
+  const Http = new XMLHttpRequest();
+  const url = 'http://localhost:9002/showAll';
+  Http.open("GET", url);
+  Http.onreadystatechange = function(e){
+    data=JSON.parse(Http.responseText);
+    data.forEach(function(item){
+      var regno = document.createElement("span");
+      var name = document.createElement("span");
+      var marks = document.createElement("span");
+      var subject = document.createElement("span");
+      var dept = document.createElement("span");
+      regno.innerHTML=item.regno;
+      name.innerHTML=item.name;
+      marks.innerHTML=item.marks;
+      subject.innerHTML=item.subject;
+      dept.innerHTML=item.dept;
+      document.body.appendChild(regno);
+      document.body.appendChild(name);
+      document.body.appendChild(marks);
+      document.body.appendChild(subject);
+      document.body.appendChild(dept);
+    });
+  }
+  Http.send();
+}
+
+function getStudent(){
+  const Http = new XMLHttpRequest();
+  const url = 'http://localhost:9002/showAll';
+  Http.open("GET", url);
+  Http.onreadystatechange = function(e){
+    data=JSON.parse(Http.responseText);
+    data.forEach(function(item){
+      var table = document.getElementById("Results");
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      cell1.innerHTML = item.regno;
+      cell2.innerHTML = item.name;
+      cell3.innerHTML = item.marks;
+      cell4.innerHTML = item.weight;
+    });
+  }
+  Http.send();
+}
+
+
+function myFunction() {
+
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "NEW CELL1";
+  cell2.innerHTML = "NEW CELL2";
+}
+</script>
+</html>

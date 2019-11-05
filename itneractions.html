@@ -1,0 +1,26 @@
+<html>
+
+<input type="Text" value ="0" id="T1">
+<input type="Button" value="increment" onmousemove="increment()">
+<input type="Button" value="decrement" onmouseleave="decrement()">
+
+
+
+
+
+
+<script>
+	function increment(){
+		var Ref1 = window.document.getElementById("T1");
+		Ref1.value = parseInt(Ref1.value) + 1;
+		}
+
+
+	function decrement(){
+		var Ref1 = window.document.getElementById("T1");
+		Ref1.value = parseInt(Ref1.value) - 1;
+	}
+
+
+</script>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<!----<body background="god_face.png">-->
+<i>Hello</i> <br>
+
+<center><u>This text will be center-aligned</u></center> <br>
+<a href="https://www.Google.co.uk">Google</a><br>
+<center><b>friend </b><br></center>
+
+Enter your name : <input type="text" name="name"> <input type="button" value="click"><br>
+
+<script>
+
+	function showmessage(){
+		window.alert("echo");
+	}
+</script>
+
+<br>
+
+
+<input type="text" id = "abc">
+<br>
+<input type="button" id="xyc" value = "click me" onclick="Process()">
+<br>
+<script>
+	function Process(){
+		var Ref = window.document.getElementById("abc");
+		Ref.value="hello my friend";
+	}
+</script>
+
+<b>Nationwide</b>
+<input type="Button" value="click" onclick="showmessage()">
+<br>
+<br>
+<br>
+
+First Number : <input type="text" id="T1"> <br>
+Second Number : <input type="text" id="T2"> <br>
+<input type="button" value="+" id = "Plus" onclick="Addition()">
+<input type="button" value="-" id = "Minus" onclick="Minus()">
+<input type="button" value="/" id = "Divid" onclick="Divid()">
+<input type="button" value="x" id = "Multiply" onclick="Multiply()"> 
+<br><br>
+Result : <input type="text" id="T3">
+
+<script>
+
+	var Ref1, Ref2, Ref3, No1, No2;
+
+	function Collection(){
+		Ref1 = window.document.getElementById("T1");
+		Ref2 = window.document.getElementById("T2");
+		Ref3 = window.document.getElementById("T3");
+		No1= parseInt(Ref1.value);
+		No2 = parseInt(Ref2.value);
+
+		if (Ref1.value == "" ){
+			window.alert("Please insert first number");
+		}
+		if (Ref2.value == "" ){
+			window.alert("Please insert second number");
+		}
+
+	}
+
+	function Addition(){
+		Collection();
+		var Result = No1 + No2;
+		Ref3.value = Result;
+	}
+
+
+	function Minus(){
+		Collection();
+		var Result = No1 - No2;
+		Ref3.value = Result;
+	}
+
+		function Divid(){
+		Collection();
+		var Result = No1 / No2;
+		Ref3.value = Result;
+	}
+
+		function Multiply(){
+		Collection();
+		var Result = No1 * No2;
+		Ref3.value = Result;
+	}
+
+</script>
+
+</body>
+</html>

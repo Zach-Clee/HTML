@@ -1,0 +1,29 @@
+<html>
+
+<form>
+Username : <input type="text"><br>
+Password : <input type="text"><br>
+<input type="Button" value="Login">
+</form>
+
+<form>
+<input type="text"><br>
+<input type="text"><br>
+<input type="Button" value="Login" onclick="check()" style="background-color:green; color: red">
+</form>
+
+<script>
+function check(){
+	console.log("button presses");
+	var empty = 0;
+	for (var i = 0; i < window.document.forms[0].elements.length; i++){
+		if (window.document.forms[0].elements[i].value == ""){
+			empty++;
+		}
+	}
+	window.alert(empty + "elemets are empty");
+}
+
+</script>
+
+</html>

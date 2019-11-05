@@ -1,0 +1,21 @@
+<html>
+
+<body onmousemove = "doSomething()">
+
+<span style="position: absolute;top: 0; left:0" id="NBS">
+	Nationwide
+</span>
+
+<script>
+
+	function doSomething(){
+		var x = window.event.clientX;
+		var y = window.event.clientY;
+		var Ref1 = window.document.getElementById("NBS");
+
+		Ref1.style.top = y;
+		Ref1.style.left = x;
+	}
+
+</script>
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<body>
+
+<input type="Button" value="click" onclick="getStudent()">
+<p>Get your greeting <a href="/findMaxMarks">here</a></p>
+
+</body>
+
+<script>
+
+function getStudent(){
+
+	const Http = new XMLHttpRequest();
+	const url = 'http://localhost:9002/showAll';
+	Http.open("GET", url);
+	Http.onreadystatechange = function(e){
+		data=JSON.parse(Http.responseText);
+		data.forEach(function(item){
+			var regno = document.createElement("span");
+			var name = document.createElement("span");
+			var marks = document.createElement("span");
+			var subject = document.createElement("span");
+			var dept = document.createElement("span");
+			regno.innerHTML=item.regno;
+			name.innerHTML=item.name;
+			marks.innerHTML=item.marks;
+			subject.innerHTML=item.subject;
+			dept.innerHTML=item.dept;
+			document.body.appendChild(regno);
+			document.body.appendChild(name);
+			document.body.appendChild(marks);
+			document.body.appendChild(subject);
+			document.body.appendChild(dept);
+		});
+	}
+	Http.send();
+}
+
+</script>
+</html>

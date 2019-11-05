@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Elements</title>
+</head>
+<body>
+
+
+<input type="Button" value="create" onclick="createbutton()">
+<input type="Button" value="countdown" onclick="startCounting()">
+<input type="text" id="T1", value="0">
+<input type="Button" value="stop" onclick="stopCount()">
+
+
+<PRE>
+	?
+	/
+	_-_
+</PRE>
+
+
+</body>
+
+<script>
+	function createelement(){
+		var ref = document.createElement("span");
+		ref.innerHTML="Javascript Guru";
+		ref.style.backgroundColor="blue";
+		document.body.appendChild(ref);
+	}
+
+	function createbutton(){
+		var btn = document.createElement("input");
+		btn.type = "Button"
+		btn.value = "click"
+		btn.onclick = function(){
+			alert("hello");
+		}
+		document.body.appendChild(btn);
+	}
+
+	var timer;
+	function startCounting(){
+		var RefT = document.getElementById("T1");
+		timer = window.setInterval(function(){RefT.value = parseInt(RefT.value)+1}, 3000);
+	}
+
+	function stopCount(){
+		window.clearInterval(timer);
+	}
+
+</script>
+</html>

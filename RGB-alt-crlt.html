@@ -1,0 +1,65 @@
+<html>
+
+<body onmousemove = "doSomething()" onkeydown="isKeyPressed(event)">
+
+<span style="position: absolute;top: 0; left:0" id="NBS">
+	Nationwide
+</span>
+
+<input type="Text" value="QA consulting" id="QA" onmouseenter="changeText()">
+<input type="Button" value="red" onmouseenter="colour('red')">
+<input type="Button" value="green" onmouseenter="colour('green')">
+<input type="Button" value="blue" onmouseenter="colour('blue')">
+
+
+<script>
+
+</script>
+
+<script>
+
+	font = 10;
+	function doSomething(){
+		var x = window.event.clientX;
+		var y = window.event.clientY;
+		var Ref1 = window.document.getElementById("NBS");
+
+
+		Ref1.style.top = y;
+		Ref1.style.left = x;
+
+		if (window.event.ctrlKey){
+			font++;
+		}
+		if (window.event.altKey){
+			font--;
+		}
+		Ref1.style.fontSize = font;
+
+	}
+
+
+	function colour(C){
+		var Ref1 = window.document.getElementById("NBS");
+		Ref1.style.color = C;
+	}
+
+	function green(){
+		var Ref1 = window.document.getElementById("NBS");
+		Ref1.style.color = "green";
+	}
+
+	function blue(){
+		var Ref1 = window.document.getElementById("NBS");
+		Ref1.style.color = "blue";
+	}
+
+
+	function changeText(){
+		var Ref1 = window.document.getElementById("NBS");
+		var QARef = window.document.getElementById("QA");
+		Ref1.innerHTML = QARef.value;
+	}
+
+</script>
+</html>

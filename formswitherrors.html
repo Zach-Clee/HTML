@@ -1,0 +1,78 @@
+<html>
+<form action="Process.HTML" method="POST" onsubmit="return checkValues()">
+	Regno <input type="Text" id="Regno" name="regno">
+	<span id="regnoError" style="visibility: hidden">Please input a registration number</span><br><br>
+	Name <input type="Text" id="Name" name="name">
+	<span id="nameError" style="visibility: hidden">Please input a name</span><br><br>
+	marks <input type="Text" id="marks" name="marks">
+	<span id="marksError" style="visibility: hidden">Please input marks</span><br><br>
+	subject <input type="Text" id="subject" name="subject">
+	<span id="subjectError" style="visibility: hidden">Please input a subject</span><br><br>
+	dept <input type="Text" id="dept" name="dept">
+	<span id="deptError" style="visibility: hidden">Please input department</span><br><br>
+	<input type="submit">
+</form>
+
+
+
+<script>
+	function checkValues(){
+		var success = true;
+		var Ref1 = document.getElementById("Regno");
+		var Ref2 = document.getElementById("Name");
+		var Ref3 = document.getElementById("marks");
+		var Ref4 = document.getElementById("subject");
+		var Ref5 = document.getElementById("dept");
+
+		if(Ref1.value == ""){
+			//alert("Regno is missing");
+			var error = document.getElementById("regnoError");
+			error.style.visibility = "visible";
+			success = false;
+		} else {
+			var error = document.getElementById("regnoError");
+			error.style.visibility = "hidden";
+		}
+		if (Ref2.value == ""){
+			//alert("Name is missing");
+			var error = document.getElementById("nameError");
+			error.style.visibility = "visible";
+			success = false;
+		} else {
+			var error = document.getElementById("nameError");
+			error.style.visibility = "hidden";
+		}
+		if (Ref3.value == ""){
+			//alert("Name is missing");
+			var error = document.getElementById("marksError");
+			error.style.visibility = "visible";
+			success = false;
+		} else {
+			var error = document.getElementById("marksError");
+			error.style.visibility = "hidden";
+		}
+		if (Ref4.value == ""){
+			//alert("Name is missing");
+			var error = document.getElementById("subjectError");
+			error.style.visibility = "visible";
+			success = false;
+		} else {
+			var error = document.getElementById("subjectError");
+			error.style.visibility = "hidden";
+		}
+		if (Ref5.value == ""){
+			//alert("Name is missing");
+			var error = document.getElementById("deptError");
+			error.style.visibility = "visible";
+			success = false;
+		} else {
+			var error = document.getElementById("deptError");
+			error.style.visibility = "hidden";
+		}
+
+		return success;
+	}
+</script>
+
+
+</html>
